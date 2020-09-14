@@ -78,16 +78,24 @@ def Dwnld_latest(driver,path):
 	driver.quit()
 	return
 
-def Get_upload():
+def Get_upload(args):
 	driver = Start_driver(options_2)
 	login_BB(driver)
-	driver.get(blackboard_DEV_Submission_labs)
+
+	if (args.u == "TUT"):
+		driver.get(blackboard_DEV_Submission_tuts)
+	elif(args.u == "LAB"):
+		driver.get(blackboard_DEV_Submission_labs)
+	else:
+		driver.get(args.u)
+
+
 	href_list = []
 	urls = ui.WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.TAG_NAME, "a")))
 
 	for url in urls:
         	href = (url.get_attribute("href"))
-        	if "bbcswebdav" in href:
+        	if "assignment" in href:
                 	href_list.append(href)
 
 	print("[!] Successfully retrived all links!")
@@ -97,4 +105,9 @@ def Get_upload():
 	else:
 		print("[!] Found submission link!")
 		driver.get(href_list[0])
+	return
+
+def multiply(args):
+	print(args.x)
+	print(args.y)
 	return
