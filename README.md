@@ -1,6 +1,7 @@
 # Blackboard-scraper
 
 ## Used to scrape important information from Blackboard
+This branch is used for new features and updates, it is always incomplete or unstable, stable release is pushed to master branch
 
 ## Installation
 
