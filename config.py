@@ -5,5 +5,6 @@ blackbaord_ILS ="https://uj.blackboard.com/ultra/courses/_32265_1/cl/outline"
 blackboard_DEV ="https://uj.blackboard.com/ultra/courses/_32561_1/cl/outline"
 blackboard_DEV_labs ="https://uj.blackboard.com/webapps/blackboard/content/listContent.jsp?course_id=_32561_1&content_id=_2008069_1&mode=reset"
 blackboard_DEV_Submission_labs="https://uj.blackboard.com/webapps/blackboard/content/listContent.jsp?course_id=_32561_1&content_id=_2008106_1&mode=reset"
+blackboard_DEV_Submission_tuts="https://uj.blackboard.com/webapps/blackboard/content/listContent.jsp?course_id=_32561_1&content_id=_2005687_1&mode=reset
 username =
 password =
