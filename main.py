@@ -4,51 +4,30 @@ from functions import *
 from Webdriver_options import *
 import argparse
 
-path = "/home/suhail/Downloads/"
 parser = argparse.ArgumentParser()
-parser.add_argument("-DL" , "--Download_latest",action="store_true",help="Downloads the latest lab into specified folder")
-parser.add_argument("-S","--Submit",action="store_true",help="Opens the submission link for specified course")
-parser.add_argument("-DA", "--Download_all",action="store_true",help="Downloads all files of specified course into specified folder")
-parser.add_argument("-L","--Login",action="store_true",help="Logs into account")
+subparsers = parser.add_subparsers()
+
+parser_submit = subparsers.add_parser('submit')
+parser_submit.add_argument("-url",default="LAB",metavar = "URL", help="Specifies URL to go to, options[LAB,TUT] or enter your own url")
+parser_submit.set_defaults(func=Get_upload)
+
+parser_download = subparsers.add_parser('download-latest')
+parser_download.add_argument("-url",default="LAB",metavar="URL",help="Specifies URL to go to, options[LAB,TUT] or your own url")
+parser_download.add_argument("-P","--path",default=path,metavar="/path/to/folder",help="Specifies path where downloads will be placed,default is set in config.py")
+parser_download.set_defaults(func=Dwnld_latest)
+
+parser_download_all = subparsers.add_parser('download-all')
+parser_download_all.add_argument("-url",default="LAB",metavar="URL",help="Specifies URL to go to, options[LAB,TUT] or your own url")
+parser_download_all.add_argument("-P","--path",default=path,metavar="/path/to/folder",help="Specifies path where downloads will be placed,default is set in config.py")
+parser_download_all.set_defaults(func=Dwnld_all)
+
+parser_login = subparsers.add_parser('login')
+# parser_login.add_argument("-url",default="LAB",metavar = "URL", help="Specifies URL to go to, options[LAB,TUT] or enter your own url")
+parser_login.add_argument("-u","--username",metavar="Student number",default= username,help="Specifies username to login with default is set in config.py")
+parser_login.add_argument("-p","--password",metavar="password",default=password,help="Specifies password used to login with default is set in config.py")
+parser_login.set_defaults(func=login_BB)
+
 args = parser.parse_args()
-
-
-if args.Download_latest:
-	try:
-		driver = Start_driver(options_1)
-		Dwnld_latest(driver,path)
-	except KeyboardInterrupt:
-		print("[!] Standby, quitting!")
-		driver.quit()
-
-if args.Submit:
-	try:
-		Get_upload()
-	except KeyboardInterrupt:
-		print("[!] Standby, quitting!")
-		driver.close()
-		driver.quit()
-
-if args.Download_all:
-	try:
-		driver = Start_driver(options_1)
-		Dwnld_all(driver,path)
-	except KeyboardInterrupt:
-		print("[!] Standby,quitting!")
-		driver.close()
-		driver.quit()
-if args.Login:
-	try:
-		driver = Start_driver(options_2)
-		login_BB(driver)
-	except KeyboardInterrupt:
-		print("[!] Standby, quitting!")
-		driver.close()
-		driver.quit()
-
-
-
-
-
+args.func(args)
 
 
