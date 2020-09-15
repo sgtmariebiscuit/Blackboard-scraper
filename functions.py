@@ -18,8 +18,7 @@ def Start_driver(options):
 	print(f'[!] Started webdriver!')
 	return(driver)
 
-def login_BB(args):
-	driver = Start_driver(options_2)
+def login_BB(args,driver):
 	driver.get(blackboard_login)
 	driver.find_element_by_id('username').send_keys(args.username)
 	driver.find_element_by_id('password').send_keys(args.password)
@@ -56,7 +55,6 @@ def Dwnld_all(args):
 	else:
 		driver.get(args.url)
 		prefix = "Document"
-	
 
 	href_list = Get_content_links(driver)
 	iterator = 1
@@ -75,8 +73,8 @@ def Dwnld_all(args):
 
 def Dwnld_latest(args):
 	driver = Start_driver(options_1)
-	login_BB(driver)
-	path = args.path 
+	login_BB(args,driver)
+	path = args.path
 
 	if (args.url == "LAB"):
 		driver.get(blackboard_DEV_labs)
@@ -87,10 +85,10 @@ def Dwnld_latest(args):
 	else:
 		driver.get(args.url)
 		prefix = "Document"
-	
+
 
 	href_list = Get_content_links(driver)
-	
+
 
 	driver.get(href_list[(len(href_list)) - 1])
 	r = requests.get(driver.current_url)
@@ -105,7 +103,7 @@ def Dwnld_latest(args):
 
 def Get_upload(args):
 	driver = Start_driver(options_2)
-	login_BB(driver)
+	login_BB(args,driver)
 
 	if (args.url == "TUT"):
 		driver.get(blackboard_DEV_Submission_tuts)
