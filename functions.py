@@ -24,7 +24,7 @@ def login_BB(args):
 	driver.find_element_by_id('username').send_keys(args.username)
 	driver.find_element_by_id('password').send_keys(args.password)
 	driver.find_element_by_class_name("btn-submit").click()
-	print(f'[!] Successfully logged in with [{username}] !')
+	print(f'[!] Successfully logged in with [{args.username}] !')
 	return
 
 def Get_content_links(driver):
