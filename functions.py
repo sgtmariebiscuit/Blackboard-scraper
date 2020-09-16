@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
 import requests
+import os
 from config import *
 from Webdriver_options import *
 
@@ -64,14 +65,19 @@ def Dwnld_all(args):
 	iterator = 1
 
 	for href in href_list:
-		driver.get(href)
-		r = requests.get(driver.current_url)
-		with open(path+prefix+str(iterator), 'wb') as f:
-			f.write(r.content)
-			f.close()
-			print(f'[!] Downloaded {prefix} {iterator} ')
+		if (os.path.isfile(path+prefix+str(iterator))):
+			print(f'[!] Found {prefix} {iterator}! in {path}')
 			iterator += 1
-	print(f'[!] Successfully pulled {iterator - 1} {prefix}s!\n[!] Output in {path}')
+			continue
+		else:
+			driver.get(href)
+			r = requests.get(driver.current_url)
+			with open(path+prefix+str(iterator), 'wb') as f:
+				f.write(r.content)
+				f.close()
+				print(f'[!] Downloaded {prefix} {iterator} ')
+				iterator += 1
+	print(f'[!] Successfully updated database with {iterator - 1} {prefix}s!\n[!] Output in {path}')
 	driver.quit()
 	return
 
