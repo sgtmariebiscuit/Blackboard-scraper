@@ -12,19 +12,24 @@ from config import *
 from Webdriver_options import *
 
 
-def Start_driver(options):
+def Start_driver(args):
 	geckodriver_autoinstaller.install()
+	if (args.driver == "1"):
+		options = options_1
+	else:
+		options = options_2
 	driver = webdriver.Firefox(options=options)
 	print(f'[!] Started webdriver!')
 	return(driver)
 
-def login_BB(args,driver):
+def login_BB(args):
+	driver = Start_driver(args)
 	driver.get(blackboard_login)
 	driver.find_element_by_id('username').send_keys(args.username)
 	driver.find_element_by_id('password').send_keys(args.password)
 	driver.find_element_by_class_name("btn-submit").click()
 	print(f'[!] Successfully logged in with [{args.username}] !')
-	return
+	return(driver)
 
 def Get_content_links(driver):
 
@@ -42,8 +47,7 @@ def Get_content_links(driver):
 
 
 def Dwnld_all(args):
-	driver = Start_driver(options_1)
-	login_BB(driver)
+	driver = login_BB(args)
 	path = args.path
 
 	if (args.url == "LAB"):
@@ -72,8 +76,7 @@ def Dwnld_all(args):
 	return
 
 def Dwnld_latest(args):
-	driver = Start_driver(options_1)
-	login_BB(args,driver)
+	driver = login_BB(args)
 	path = args.path
 
 	if (args.url == "LAB"):
@@ -102,8 +105,7 @@ def Dwnld_latest(args):
 	return
 
 def Get_upload(args):
-	driver = Start_driver(options_2)
-	login_BB(args,driver)
+	driver = login_BB(args)
 
 	if (args.url == "TUT"):
 		driver.get(blackboard_DEV_Submission_tuts)
