@@ -1,6 +1,7 @@
 # Blackboard-scraper
 
-## Used to scrape important information from Blackboard
+## This project was created to assist students struggling with data usuage and to increase efficiency in submitting/downloading assignments
+*Currently only works for documents that are in pdf format 
 
 ## Installation
 
