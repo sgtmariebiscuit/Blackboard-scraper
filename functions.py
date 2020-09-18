@@ -14,7 +14,7 @@ from Webdriver_options import *
 
 
 def Start_driver(args):
-	geckodriver_autoinstaller.install()
+#	geckodriver_autoinstaller.install()
 	if (args.driver == "1"):
 		options = options_1
 	else:
@@ -136,6 +136,4 @@ def Get_upload(args):
 	else:
 		print("[!] Found submission link!")
 		driver.get(href_list[0])
-
-		driver.quit()
 	return
