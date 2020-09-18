@@ -29,6 +29,13 @@ Default settings in config.py can be configured to allow user to just type *pyth
 
 ### python main.py download-latest 
 
+Downloads the latest pdf uploaded to specified URL
+
+#### python main.py login --username <student_number> --password <password> -url URL --path </PATH/TO/DIRECTORY/>
+default is set to download latest lab
+
+run python main.py download-latest -h to see all options available 
+
 ### python main.py download-all 
 
 
