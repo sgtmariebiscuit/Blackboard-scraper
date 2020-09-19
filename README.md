@@ -13,6 +13,9 @@
 ### Windows 
 
 1) You will be required to install geckodriver (Tested to work with firefox drivers) then unzip and move the geckodriver to the project folder
+   chrome : https://chromedriver.chromium.org/
+   firefox : https://github.com/mozilla/geckodriver/releases
+   or look into : https://github.com/titusfortner/webdrivers
 2) run python installation.py **Note geckodriver_autoinstaller is not required for the program to work, you may skip that package during installation**
 3) run python main.py -h
 
