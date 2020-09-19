@@ -12,7 +12,7 @@
 
 ### Windows 
 
-1) You will be required to install geckodriver (Tested to work with firefox drivers) then unzip and move the geckodriver to the project folder
+1) You will be required to install a webdriver (Tested to work with firefox drivers) then unzip and move the geckodriver to the project folder
   
    chrome : https://chromedriver.chromium.org/
    firefox : https://github.com/mozilla/geckodriver/releases
