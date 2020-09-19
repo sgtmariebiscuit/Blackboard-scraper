@@ -8,13 +8,13 @@
  
 1) run python installation.py
 2) uncomment *geckodriver_autoinstaller.install()* from function.py file under the Start_driver(args) function 
-3) run main.py -h
+3) run python main.py -h
 
 ### Windows 
 
 1) You will be required to install geckodriver (Tested to work with firefox drivers) then unzip and move the geckodriver to the project folder
 2) run python installation.py **Note geckodriver_autoinstaller is not required for the program to work, you may skip that package during installation**
-3) run main.py -h
+3) run python main.py -h
 
 ## Usage
 
