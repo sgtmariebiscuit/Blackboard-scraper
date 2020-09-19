@@ -6,15 +6,14 @@
 ## Installation 
 ### Debian
  
-1) run pip install -r requirements.txt
+1) run python installation.py
 2) uncomment *geckodriver_autoinstaller.install()* from function.py file under the Start_driver(args) function 
-2) Edit config.py to add default variables to make usage a lot more easier
 3) run main.py -h
 
 ### Windows 
 
 1) You will be required to install geckodriver (Tested to work with firefox drivers) then unzip and move the geckodriver to the project folder
-2) run pip install -r .\requirements.txt (should work with pipenv and Anaconda)
+2) run python installation.py **Note geckodriver_autoinstaller is not required for the program to work, you may skip that package during installation**
 3) run main.py -h
 
 ## Usage
