@@ -23,7 +23,7 @@
 
 ## Usage
 
-### python main.py login --username <student_num> --password <password>
+#### python main.py login --username <student_num> --password <password>
 This functions logs user in a lot quicker than the standard way of accessing the Blackboard
 Default settings in config.py can be configured to allow user to just type *python main.py login*
 
