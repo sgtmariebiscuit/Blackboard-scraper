@@ -1,6 +1,6 @@
 # Blackboard-scraper
 
-## This project was created to assist students struggling with data usuage and to increase efficiency in submitting/downloading assignments
+## This project was created to assist students struggling with data usage and to increase efficiency in submitting/downloading assignments
 *Currently only works for documents that are in pdf format 
 
 ## Installation 
@@ -24,20 +24,20 @@
 ## Usage
 
 #### python main.py login --username <student_num> --password <password>
-This functions logs user in a lot quicker than the standard way of accessing the Blackboard
-Default settings in config.py can be configured to allow user to just type *python main.py login*
+1) This functions logs user in a lot quicker than the standard way of accessing the Blackboard
+2) Default settings in config.py can be configured to allow user to just type *python main.py login*
 
 #### python main.py download-latest --username <student_number> --password <password> -url URL --path </PATH/TO/DIRECTORY/>
-Downloads the latest pdf uploaded to specified URL
-Default is set to download latest lab
-run python main.py download-latest -h to see all options available 
+1) Downloads the latest pdf uploaded to specified URL
+2) Default is set to download latest lab
+3) run python main.py download-latest -h to see all options available 
 
 #### python main.py download-all --username <student_number> --password <password> -url URL --path </PATH/TO/DIRECTORY/>
-Downloads all documents within specified folder and moves to set directory (deafult is dev labs)
-run python main.py download-all -h to see all options available
+1) Downloads all documents within specified folder and moves to set directory (deafult is dev labs)
+2) run python main.py download-all -h to see all options available
 
 #### python main.py submit --username <student_number> --password <password> -url URL
-Opens a webpage and takes user to submission link where the user can easily upload an assignment 
+1) Opens a webpage and takes user to submission link where the user can easily upload an assignment 
  **Note only dev_labs and dev_tuts are support, other submission links can be specified with the url flag**
  
 
