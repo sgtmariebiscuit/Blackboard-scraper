@@ -1,7 +1,7 @@
 # Python3
 # Function file
 
-import geckodriver_autoinstaller
+# import geckodriver_autoinstaller
 from selenium import webdriver
 from selenium.webdriver.support import ui
 from selenium.webdriver.support import expected_conditions as EC
@@ -14,7 +14,7 @@ from Webdriver_options import *
 
 
 def Start_driver(args):
-	geckodriver_autoinstaller.install()
+	#geckodriver_autoinstaller.install()   <--- Leave this commented if you're on windows 
 	if (args.driver == "1"):
 		options = options_1
 	else:
