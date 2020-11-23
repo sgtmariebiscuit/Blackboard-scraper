@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "title": "Demo threat model",
+    "owner": "Suhail",
+    "description": "Demo threat model"
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "title": "Demo title",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0
+      }
+    ],
+    "reviewer": "null"
+  }
+}
